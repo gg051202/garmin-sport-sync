@@ -3,8 +3,10 @@ name: garmin-sports-sync
 on:
   workflow_dispatch:
   schedule:
-    # 9点到到24点的第0分钟执行
-    - cron: '* 9-23 * * *'
+    # 工作日 10点、20点执行
+    - cron: '* 10,20 * * 1,2,3,4,5'
+    # 周六周日全天执行
+    - cron: '* 0,8-23 * * 0,6'
 env:
   GITHUB_NAME: XiaoSiHwang
   GITHUB_EMAIL: 1009326507@qq.com
