@@ -15,7 +15,7 @@ on:
     - cron: '* 0,8-23 * * 0,6'
   repository_dispatch:
     types:
-      - webhook-1
+      - touch-by-webhook
 env:
   GITHUB_NAME: XiaoSiHwang
   GITHUB_EMAIL: 1009326507@qq.com
