@@ -4,15 +4,14 @@ on:
   workflow_dispatch:
   schedule:
     # Minute [0,59]
-    # Hour [0,23]
+    # Hour [0,23] 使用的是UTC时间
     # Day of the month [1,31]
     # Month of the year [1,12]
     # Day of the week ([0,6] with 0=Sunday)
     
-    # 工作日 10点、20点执行
-    - cron: '* 10,20 * * 1,2,3,4,5'
-    # 周六周日 8点到0点执行
-    - cron: '* 0,8-23 * * 0,6'
+    
+    # 工作日 10点、20点执行，配置项=真实时间-8
+    - cron: '15 * * * *'
   repository_dispatch:
     types:
       - touch-by-webhook
